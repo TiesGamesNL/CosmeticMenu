@@ -14,6 +14,12 @@ use pocketmine\level\Level;
 use pocketmine\level\particle\HugeExplodeParticle;
 use pocketmine\level\particle\WaterParticle;
 use pocketmine\level\particle\AngryVillagerParticle;
+use pocketmine\entity\Arrow;
+use pocketmine\nbt\tag\Float;
+use pocketmine\nbt\tag\Compound;
+use pocketmine\nbt\tag\Enum;
+use pocketmine\nbt\tag\Double;
+use pocketmine\entity\Entity;
 
 Class Main extends PluginBase implements Listener{
        
@@ -27,10 +33,10 @@ public function onPacketReceived(DataPacketReceiveEvent $event){
             if($pk instanceof UseItemPacket and $pk->face === 0xff) {
              $block = $player->getLevel()->getBlock($player->floor()->subtract(0, 1));
             $item = $player->getInventory()->getItemInHand();
-            $pos = new Vector3($player->getX(), $player->getY() + 1, $player->getZ());
+            $pos = new Vector3($player->getX() + 1, $player->getY() + 1, $player->getZ());
             $particle = new RedstoneParticle($pos, 5);  
             $particle2 = new HugeExplodeParticle($pos, 5);
-            $particle3 = new WaterParticle($pos, 5);
+            $particle3 = new WaterParticle($pos, 12);
             $particle4 = new AngryVillagerParticle($pos, 5);
             $level = $player->getLevel();
 if($item->getId() == 341){
@@ -39,13 +45,41 @@ if($item->getId() == 341){
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    }
+   if($item->getId() == 346){
+						$nbt = new Compound ( "", [ 
+				"Pos" => new Enum ( "Pos", [ 
+						new Double ( "", $player->x ),
+						new Double ( "", $player->y + $player->getEyeHeight () ),
+						new Double ( "", $player->z ) 
+				] ),
+				"Motion" => new Enum ( "Motion", [ 
+						new Double ( "", - \sin ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
+				] ),
+				"Rotation" => new Enum ( "Rotation", [ 
+						new Float ( "", $player->yaw ),
+						new Float ( "", $player->pitch ) 
+				] ) 
+		] );
+                                                
+                  
+		
+		$f = 1.5;
+		$snowball = Entity::createEntity ( "Egg", $player->chunk, $nbt, $player );
+		$snowball->setMotion ( $snowball->getMotion ()->multiply ( $f ) );
+		$snowball->spawnToAll ();
+		}
+	}
   }
- }
 	public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
 		$i = $e->getItem();
 		$p = $e->getPlayer();
 			if($i->getId() == 341){
-     $p->sendPopup("§eParticle§dBomb");
+     $p->sendPopup("§l§eParticle§dBomb");
   }
+  if($i->getId() == 346){
+     $p->sendPopup("§l§6Egg§bLauncher");
+ }
  }
 }
