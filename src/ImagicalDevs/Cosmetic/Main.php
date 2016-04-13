@@ -1,6 +1,7 @@
 <?php
 
 Namespace ImagicalDevs\Cosmetic;
+use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\network\protocol\UseItemPacket;
 Use pocketmine\math\Vector3;
@@ -8,6 +9,10 @@ use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\player\PlayerItemHeldEvent;
 
 Class Main extends PluginBase{
+public function onEnable(){
+$this->getLogger()->info("§aCosmeticMenu by ImagicDevs loaded.");
+ $this->getServer()->getPluginManager()->registerEvents($this, $this);
+}
 public function onPacketReceived(DataPacketReceiveEvent $event){
             $pk = $event->getPacket();
             $player = $event->getPlayer();
