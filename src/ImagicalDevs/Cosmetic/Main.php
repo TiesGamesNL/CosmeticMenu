@@ -31,7 +31,7 @@ public function onPacketReceived(DataPacketReceiveEvent $event){
             $particle = new RedstoneParticle($pos, 5);  
             $particle2 = new HugeExplodeParticle($pos, 5);
             $particle3 = new WaterParticle($pos, 5);
-            $particle = new AngryVillagerParticle($pos, 5);
+            $particle4 = new AngryVillagerParticle($pos, 5);
             $level = $player->getLevel();
 if($item->getId() == 341){
      $level->addParticle($particle);
