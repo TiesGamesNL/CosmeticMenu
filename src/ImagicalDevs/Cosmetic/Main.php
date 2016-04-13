@@ -8,7 +8,7 @@ Use pocketmine\math\Vector3;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\player\PlayerItemHeldEvent;
 
-Class Main extends PluginBase{
+Class Main extends PluginBase implements Listener{
 public function onEnable(){
 $this->getLogger()->info("§aCosmeticMenu by ImagicDevs loaded.");
  $this->getServer()->getPluginManager()->registerEvents($this, $this);
