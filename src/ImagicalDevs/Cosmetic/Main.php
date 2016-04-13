@@ -5,6 +5,7 @@ use pocketmine\event\Listener;
 use pocketmine\plugin\PluginBase;
 use pocketmine\network\protocol\UseItemPacket;
 Use pocketmine\math\Vector3;
+Use pocketmine\level\particle\DustParticle;
 use pocketmine\event\server\DataPacketReceiveEvent;
 use pocketmine\event\player\PlayerItemHeldEvent;
 
