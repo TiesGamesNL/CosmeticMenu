@@ -51,7 +51,7 @@ if($item->getId() == 341){
 $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
 }
-   if($item->getid() == 260){
+   if($item->getid() == 341){
 $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
 $player->getInventory()->addItem(Item::get(ITEM::BED));
    $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
