@@ -62,7 +62,6 @@ $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
 $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::COMPASS));
 }
-}
    if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
 				"Pos" => new Enum ( "Pos", [ 
