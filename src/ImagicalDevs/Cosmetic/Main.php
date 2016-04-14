@@ -47,8 +47,8 @@ if($item->getId() == 341){
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    }
-   if($item->getId() == 345){
-$player->getInventory()->removeItem(Item::get(ITEM::COMPASS));
+   if($item->getId() == 347){
+$player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
    $player->getInventory()->addItem(Item::get(ITEM::APPLE));
 }
    if($item->getid() == 260){
@@ -61,7 +61,7 @@ if($item->getId() == 355){
 $player->getInventory()->removeItem(Item::get(ITEM::BED));
 $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
 $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->addItem(Item::get(ITEM::COMPASS));
+   $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
    if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
@@ -99,11 +99,12 @@ $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
   if($i->getId() == 346){
      $p->sendPopup("§l§6Egg§bLauncher");
  }
-if($i->getId() == 345){
+if($i->getId() == 347){
      $p->sendPopup("§l§dCosmetic§eMenu");
   }
 if($i->getId() == 260){
      $p->sendPopup("§l§6Gadgets");
   }
-if($i->getId() == 355){      $p->sendPopup("§l§7Back...");   } }
+if($i->getId() == 355){      $p->sendPopup("§l§7Back...");   } 
+}
 }
