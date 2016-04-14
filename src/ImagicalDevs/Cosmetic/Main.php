@@ -53,7 +53,7 @@ $player->getInventory()->removeItem(Item::get(ITEM::COMPASS));
 }
    if($item->getid() == 260){
 $player->getInventory()->removeItem(Item::get(ITEM::APPLE));
-$player->getInventory()->addItem(Item::get(ITEM::BED))
+$player->getInventory()->addItem(Item::get(ITEM::BED));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
