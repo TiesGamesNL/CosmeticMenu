@@ -48,11 +48,12 @@ if($item->getId() == 341){
      $level->addParticle($particle4);
    }
    if($item->getId() == 345){
-$player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+$player->getInventory()->removeItem(Item::get(ITEM::COMPASS));
    $player->getInventory()->addItem(Item::get(ITEM::APPLE));
 }
    if($item->getid() == 260){
 $player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+$player->getInventory()->addItem(Item::get(ITEM::BED))
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
