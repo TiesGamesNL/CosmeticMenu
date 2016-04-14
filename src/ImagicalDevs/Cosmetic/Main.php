@@ -48,13 +48,20 @@ if($item->getId() == 341){
      $level->addParticle($particle4);
    }
    if($item->getId() == 345){
+$player->getInventory()->removeItem(Item::get(ITEM::APPLE));
    $player->getInventory()->addItem(Item::get(ITEM::APPLE));
-   $player->getInventory()->removeItem(Item::get(ITEM::COMPASS));
 }
    if($item->getid() == 260){
+$player->getInventory()->removeItem(Item::get(ITEM::APPLE));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
-   $player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+}
+if($item->getId() == 355){
+$player->getInventory()->removeItem(Item::get(ITEM::BED));
+$player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
+$player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
+   $player->getInventory()->addItem(Item::get(ITEM::COMPASS));
+}
 }
    if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
@@ -98,5 +105,5 @@ if($i->getId() == 345){
 if($i->getId() == 260){
      $p->sendPopup("§l§6Gadgets");
   }
- }
+if($i->getId() == 355){      $p->sendPopup("§l§7Back...");   } }
 }
