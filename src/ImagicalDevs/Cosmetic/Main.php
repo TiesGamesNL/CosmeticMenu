@@ -17,9 +17,11 @@ use pocketmine\level\particle\AngryVillagerParticle;
 use pocketmine\entity\Arrow;
 use pocketmine\nbt\tag\Float;
 use pocketmine\nbt\tag\Compound;
+use pocketmine\inventory\Inventory;
 use pocketmine\nbt\tag\Enum;
 use pocketmine\nbt\tag\Double;
 use pocketmine\entity\Entity;
+use pocketmine\item\Item;
 
 Class Main extends PluginBase implements Listener{
        
@@ -45,6 +47,15 @@ if($item->getId() == 341){
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    }
+   if($item->getId() == 345){
+   $player->getInventory()->addItem(Item::get(ITEM::APPLE));
+   $player->getInventory()->removeItem(Item::get(ITEM::COMPASS));
+}
+   if($item->getid() == 260){
+   $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
+   $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
+   $player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+}
    if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
 				"Pos" => new Enum ( "Pos", [ 
