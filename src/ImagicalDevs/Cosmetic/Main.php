@@ -92,5 +92,11 @@ if($item->getId() == 341){
   if($i->getId() == 346){
      $p->sendPopup("§l§6Egg§bLauncher");
  }
+if($i->getId() == 345){
+     $p->sendPopup("§l§dCosmetic§eMenu");
+  }
+if($i->getId() == 260){
+     $p->sendPopup("§l§6Gadgets");
+  }
  }
 }
