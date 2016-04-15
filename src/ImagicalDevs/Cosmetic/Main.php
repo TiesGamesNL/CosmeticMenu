@@ -63,34 +63,8 @@ if($item->getId() == 341){
    $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
    $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
-   if($item->getId() == 346){
-						$nbt = new Compound ( "", [ 
-				"Pos" => new Enum ( "Pos", [ 
-						new Double ( "", $player->x ),
-						new Double ( "", $player->y + $player->getEyeHeight () ),
-						new Double ( "", $player->z ) 
-				] ),
-				"Motion" => new Enum ( "Motion", [ 
-						new Double ( "", - \sin ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
-						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
-						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
-				] ),
-				"Rotation" => new Enum ( "Rotation", [ 
-						new Float ( "", $player->yaw ),
-						new Float ( "", $player->pitch ) 
-				] ) 
-		] );
-                                                
-                  
-		
-		$f = 1.5;
-		$snowball = Entity::createEntity ( "Egg", $player->chunk, $nbt, $player );
-		$snowball->setMotion ( $snowball->getMotion ()->multiply ( $f ) );
-		$snowball->spawnToAll ();
-		}
-	}
-  }
-	public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
+   
+   public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
 		$i = $e->getItem();
 		$p = $e->getPlayer();
   if($i->getId() == 331){
@@ -110,3 +84,31 @@ if($item->getId() == 341){
   } 
 }
 }
+
+  if($item->getId() == 346){
+						$nbt = new Compound ( "", [ 
+				"Pos" => new Enum ( "Pos", [ 
+						new Double ( "", $player->x ),
+						new Double ( "", $player->y + $player->getEyeHeight () ),
+						new Double ( "", $player->z ) 
+				] ),
+				"Motion" => new Enum ( "Motion", [ 
+                                                new Double ( "", - \sin ( $player- >yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
+				] ),
+				"Rotation" => new Enum ( "Rotation", [ 
+						new Float ( "", $player->yaw ),
+						new Float ( "", $player->pitch ) 
+				] ) 
+		] );
+                                                
+                  
+		
+		$f = 1.5;
+		$snowball = Entity::createEntity ( "Egg", $player->chunk, $nbt, $player );
+		$snowball->setMotion ( $snowball->getMotion ()->multiply ( $f ) );
+		$snowball->spawnToAll ();
+		}
+	}
+  }
