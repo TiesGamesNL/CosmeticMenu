@@ -50,6 +50,7 @@ if($item->getId() == 341){
    if($item->getId() == 347){
    $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMONDHELMATE));
 }
    if($item->getid() == 341){
    $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
