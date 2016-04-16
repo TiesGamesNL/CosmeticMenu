@@ -41,7 +41,7 @@ public function onPacketReceived(DataPacketReceiveEvent $event){
             $particle3 = new WaterParticle($pos, 12);
             $particle4 = new AngryVillagerParticle($pos, 5);
             $level = $player->getLevel();
-if($item->getId() == 341){
+if($item->getId() == 347){
      $level->addParticle($particle);
      $level->addParticle($particle2);
      $level->addParticle($particle3);
@@ -50,7 +50,7 @@ if($item->getId() == 341){
    if($item->getId() == 347){
    $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMATE));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
 }
    if($item->getid() == 341){
    $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
@@ -58,10 +58,16 @@ if($item->getId() == 341){
    $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
+   if($item->getid() == 310){
+   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+   $player->getInventory()->addItem(Item::get(ITEM::WOODEN_SWORD));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+}
    if($item->getId() == 355){
    $player->getInventory()->removeItem(Item::get(ITEM::BED));
    $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
    $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
+   $player->getInventory()->removeItem(Item:;get(ITEM::WOODEN_SWORD));
    $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
    
