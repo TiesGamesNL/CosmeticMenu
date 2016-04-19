@@ -27,7 +27,7 @@ Class Main extends PluginBase implements Listener{
        
      public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("§aCosmeticMenu by ImagicalDevs loaded ;D!");
+        $this->getLogger()->info("§aCosmeticMenu by ImagicalDevs Enable ;D!");
         }
 public function onPacketReceived(DataPacketReceiveEvent $event){
             $pk = $event->getPacket();
@@ -47,22 +47,26 @@ if($item->getId() == 347){
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    }
+//Main
    if($item->getId() == 347){
    $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
    $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
 }
+//Gadgets
    if($item->getid() == 341){
    $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::BED));
    $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
+//Armor
    if($item->getid() == 310){
    $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
    $player->getInventory()->addItem(Item::get(ITEM::WOODEN_SWORD));
    $player->getInventory()->addItem(Item::get(ITEM::BED));
 }
+//Back
    if($item->getId() == 355){
    $player->getInventory()->removeItem(Item::get(ITEM::BED));
    $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
@@ -70,7 +74,7 @@ if($item->getId() == 347){
    $player->getInventory()->removeItem(Item:;get(ITEM::WOODEN_SWORD));
    $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
-   
+//Popups Messages
    public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
 		$i = $e->getItem();
 		$p = $e->getPlayer();
@@ -89,6 +93,11 @@ if($item->getId() == 347){
   if($i->getId() == 355){    
      $p->sendPopup("§l§7Back...");  
   } 
+  if($i->getId() == 310){
+     $p->sendPopup("§l§6Armor");
+  }
+  if($i->getId() == 268){
+     $p->sendPopup("§l§6Leather§bArmor");
 }
 }
 
