@@ -15,11 +15,11 @@ use pocketmine\level\particle\HugeExplodeParticle;
 use pocketmine\level\particle\WaterParticle;
 use pocketmine\level\particle\AngryVillagerParticle;
 use pocketmine\entity\Arrow;
-use pocketmine\nbt\tag\FloatTag;
-use pocketmine\nbt\tag\CompoundTag;
+use pocketmine\nbt\tag\Float;
+use pocketmine\nbt\tag\Compound;
 use pocketmine\inventory\Inventory;
-use pocketmine\nbt\tag\EnumTag;
-use pocketmine\nbt\tag\DoubleTag;
+use pocketmine\nbt\tag\Enum;
+use pocketmine\nbt\tag\Double;
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;
 
@@ -27,7 +27,7 @@ Class Main extends PluginBase implements Listener{
        
      public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info("§aCosmeticMenu by ImagicalDevs Enable ;D!");
+        $this->getLogger()->info("§aCosmeticMenu by ImagicalDevs loaded ;D!");
         }
 public function onPacketReceived(DataPacketReceiveEvent $event){
             $pk = $event->getPacket();
@@ -41,67 +41,120 @@ public function onPacketReceived(DataPacketReceiveEvent $event){
             $particle3 = new WaterParticle($pos, 12);
             $particle4 = new AngryVillagerParticle($pos, 5);
             $level = $player->getLevel();
-if($item->getId() == 347){
+if($item->getId() == 341){
      $level->addParticle($particle);
      $level->addParticle($particle2);
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    }
-//Main
    if($item->getId() == 347){
-   $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
-   $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
+$player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+   $player->getInventory()->addItem(Item::get(ITEM::APPLE));
    $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
 }
-//Gadgets
-   if($item->getid() == 341){
-   $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->addItem(Item::get(ITEM::BED));
-   $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
+   if($item->getid() == 260){
+$player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+$player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
-//Armor
-   if($item->getid() == 310){
-   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
-   $player->getInventory()->addItem(Item::get(ITEM::WOODEN_SWORD));
-   $player->getInventory()->addItem(Item::get(ITEM::BED));
+if($item->getid() == 310){
+$player->getInventory()->removeItem(Item::get(ITEM::APPLE));
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+$player->getInventory()->addItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::LEATHER_TUNIC));
 }
-//Back
-   if($item->getId() == 355){
-   $player->getInventory()->removeItem(Item::get(ITEM::BED));
-   $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
-   $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
-   $player->getInventory()->removeItem(Item:;get(ITEM::WOODEN_SWORD));
+if($item->getid() == 311){
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_LEGGINGS));
+   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_BOOTS));
+   }
+   elseif($item->getid() == 303){
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::CHAIN_HELMET));
+   $player->getInventory()->addItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::CHAIN_LEGGINGS));
+   $player->getInventory()->addItem(Item::get(ITEM::CHAIN_BOOTS));
+   }
+   elseif($item->getid() == 307){
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::IRON_HELMET));
+   $player->getInventory()->addItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::IRON_LEGGINGS));
+   $player->getInventory()->addItem(Item::get(ITEM::IRON_BOOTS));
+   }
+   elseif($item->getid() == 315){
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::GOLD_HELMET));
+   $player->getInventory()->addItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->addItem(Item::get(ITEM::GOLD_LEGGINGS));
+   $player->getInventory()->addItem(Item::get(ITEM::GOLD_BOOTS));
+   }
+   elseif($item->getid() == 299){
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::BED));
+   $player->getInventory()->addItem(Item::get(ITEM::LEATHER_CAP));
+   $player->getInventory()->addItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->addItem(Item::get(ITEM::LEATHER_PANTS));
+   $player->getInventory()->addItem(Item::get(ITEM::LEATHER_BOOTS));
+   }
+if($item->getId() == 355){
+$player->getInventory()->removeItem(Item::get(ITEM::BED));
+$player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
+$player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
+$player->getInventory()->removeItem(Item::get(ITEM::GOLD_HELMET));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_LEGGINGS));
+   $player->getInventory()->removeItem(Item::get(ITEM::GOLD_BOOTS));
+$player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_LEGGINGS));
+   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_BOOTS));
+$player->getInventory()->removeItem(Item::get(ITEM::IRON_HELMET));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_LEGGINGS));
+   $player->getInventory()->removeItem(Item::get(ITEM::IRON_BOOTS));
+$player->getInventory()->removeItem(Item::get(ITEM::CHAIN_HELMET));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_CHESTPLATE));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_LEGGINGS));
+   $player->getInventory()->removeItem(Item::get(ITEM::CHAIN_BOOTS));
+$player->getInventory()->removeItem(Item::get(ITEM::LEATHER_CAP));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_TUNIC));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_PANTS));
+   $player->getInventory()->removeItem(Item::get(ITEM::LEATHER_BOOTS));
    $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
-//Popups Messages
-   public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
-		$i = $e->getItem();
-		$p = $e->getPlayer();
-  if($i->getId() == 331){
-     $p->sendPopup("§l§eParticle§dBomb");
-  }
-  if($i->getId() == 346){
-     $p->sendPopup("§l§6Egg§bLauncher");
-  }
-  if($i->getId() == 347){
-     $p->sendPopup("§l§dCosmetic§eMenu");
-  }
-  if($i->getId() == 341){
-     $p->sendPopup("§l§6Gadgets");
-  }
-  if($i->getId() == 355){    
-     $p->sendPopup("§l§7Back...");  
-  } 
-  if($i->getId() == 310){
-     $p->sendPopup("§l§6Armor");
-  }
-  if($i->getId() == 268){
-     $p->sendPopup("§l§6Leather§bArmor");
-}
-}
-
-  if($item->getId() == 346){
+   if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
 				"Pos" => new Enum ( "Pos", [ 
 						new Double ( "", $player->x ),
@@ -109,7 +162,7 @@ if($item->getId() == 347){
 						new Double ( "", $player->z ) 
 				] ),
 				"Motion" => new Enum ( "Motion", [ 
-                                                new Double ( "", - \sin ( $player- >yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "", - \sin ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
 						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
 						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
 				] ),
@@ -128,3 +181,23 @@ if($item->getId() == 347){
 		}
 	}
   }
+	public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
+		$i = $e->getItem();
+		$p = $e->getPlayer();
+			if($i->getId() == 341){
+     $p->sendPopup("§l§eParticle§dBomb");
+  }
+  if($i->getId() == 346){
+     $p->sendPopup("§l§6Egg§bLauncher");
+ }
+ if($i->getId() == 310){
+     $p->sendPopup("§l§bArmour");
+     }
+if($i->getId() == 347){
+     $p->sendPopup("§l§dCosmetic§eMenu");
+  }
+if($i->getId() == 260){
+     $p->sendPopup("§l§6Gadgets");
+  }
+if($i->getId() == 355){      $p->sendPopup("§l§7Back...");   } }
+}
