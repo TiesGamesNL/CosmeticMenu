@@ -15,11 +15,11 @@ use pocketmine\level\particle\HugeExplodeParticle;
 use pocketmine\level\particle\WaterParticle;
 use pocketmine\level\particle\AngryVillagerParticle;
 use pocketmine\entity\Arrow;
-use pocketmine\nbt\tag\Float;
-use pocketmine\nbt\tag\Compound;
+use pocketmine\nbt\tag\FloatTag;
+use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\inventory\Inventory;
-use pocketmine\nbt\tag\Enum;
-use pocketmine\nbt\tag\Double;
+use pocketmine\nbt\tag\EnumTag;
+use pocketmine\nbt\tag\DoubleTag;
 use pocketmine\entity\Entity;
 use pocketmine\item\Item;
 
