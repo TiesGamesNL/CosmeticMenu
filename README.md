@@ -3,16 +3,13 @@ A Plugin that let's you have a lot of fun.
 
 A plugin that let you use gadgets with a tap of a clock.
 
-## How it works
+## ToDo List
 
-When you tap the clock you get a Slimeball(Gadget) when you tap the Slimeball you get a redstone and a fishingrod. That all for now.
+-Gadgets(Done)
 
-### Gadgets:
+-Armour(Done)
 
--Egg Launcher (Fishing Rod)
+-Particles
 
--Particles Bomb (RedStone)
-
--More feature coming
-
+-Effects
 
