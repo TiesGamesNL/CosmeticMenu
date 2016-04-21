@@ -72,8 +72,7 @@ if($item->getId() == 355){
    $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
    $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
    $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
-   $player->getInventory()-
->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
    $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
    if($item->getId() == 346){
