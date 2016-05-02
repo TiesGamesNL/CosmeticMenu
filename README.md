@@ -5,11 +5,11 @@ A plugin that let you use gadgets with a tap of a clock.
 
 ## ToDo List
 
--Gadgets(Done)
+- [x] Gadgets
 
--Armour(Done)
+- [ ] Armour
 
--Particles
+- [ ] Particles
 
--Effects
+- [ ] Effects
 
