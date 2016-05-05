@@ -46,34 +46,36 @@ if($item->getId(){
      $level->addParticle($particle2);
      $level->addParticle($particle3);
      $level->addParticle($particle4);
-   }
-//Main
+}
+//CosmeticMenu
    if($item->getId() == 347){
-$player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
-   $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
+      $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
 }
 //Gadgets
    if($item->getid() == 341){
       $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
-      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+      $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
       $player->getInventory()->addItem(Item::get(ITEM::BED));
-      $player->getInventory()->addItem(Item::get(ITEM::REDSTONE));
       $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
 }
-//Armour
-if($item->getid() == 310){
-   $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+//Partical
+   if($item->getid() == 331){
+      $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
+      $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
+      $player->getInventory()->addItem(Item::get(ITEM::LAPISLAZULE));
+      $player->getInventory()->addItem(Item::get(ITEM::ORANGEDYE));
+      $player->getInventory()->addItem(Item::get(ITEM::ROSERED));
+      $player->getInventory()->addItem(Item::get(ITEM::BONEMEAL));
 }
 //Back
-if($item->getId() == 355){
-   $player->getInventory()->removeItem(Item::get(ITEM::BED));
-   $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
-   $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
-   $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
-   $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
-   $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
+   if($item->getId() == 355){
+      $player->getInventory()->removeItem(Item::get(ITEM::BED));
+      $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
+      $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
+      $player->getInventory()->removeItem(Item::get(ITEM::REDSTONE));
+      $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
 }
    if($item->getId() == 346){
 						$nbt = new Compound ( "", [ 
@@ -105,21 +107,21 @@ if($item->getId() == 355){
 	public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
 		$i = $e->getItem();
 		$p = $e->getPlayer();
-  if($i->getId() == 331){
-     $p->sendPopup("§l§eParticle§dBomb");
+   if($i->getId() == 347){
+     $p->sendPopup("§l§dCosmetic§eMenu");
+     }
+     //Gadgets
+   if($i->getId() == 341){
+     $p->sendPopup("§l§6Gadgets");
      }
   if($i->getId() == 346){
      $p->sendPopup("§l§6Egg§bLauncher");
      }
-  if($i->getId() == 310){
-     $p->sendPopup("§l§bArmor");
+     //Partical
+  if($i->getId() == 331){
+     $p->sendPopup("§l§bParticals");
      }
-  if($i->getId() == 347){
-     $p->sendPopup("§l§dCosmetic§eMenu");
-  }
-  if($i->getId() == 341){
-     $p->sendPopup("§l§6Gadgets");
-  }
+     //Back
   if($i->getId() == 355){     
      $p->sendPopup("§l§7Back...");  
   } 
