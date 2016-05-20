@@ -108,12 +108,95 @@ if($item->getId() == 346){
       $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->addItem(Item::get(ITEM::MINECART));
       $player->getInventory()->addItem(Item::get(ITEM::GLOWSTONE_DUST));
+      $player->getInventory()->addItem(Item::get(ITEM::DIAMOND_HELMET));
 }
+//Armours
+if($item->getId() == 310){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
+      $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
+      $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE_DUST));
+      $player->getInventory()->addItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->addItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->addItem(Item::get(ITEM::GOLD_INGOT));
+      $player->getInventory()->addItem(Item::get(ITEM::GUNPOWDER));
+      $player->getInventory()->addItem(Item::get(ITEM::LEATHER));
+      }
+      //Diamond Armour
+      if($item->getid() == 264){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->removeItem(Item::get(ITEM::GOLD_INGOT));
+       $player->getInventory()->removeItem(Item::get(ITEM::GUNPOWDER));
+       $player->getInventory()->removeItem(Item::get(ITEM::LEATHER));
+       $player->getInventory()->addItem(Item::get(ITEM::BED));
+       $player->getInventory()->setHelmet(Item::get(ITEM::DIAMOND_HELMET));
+       $player->getInventory()->setChestplate(Item::get(ITEM::DIAMOND_CHESTPLATE));
+       $player->getInventory()->setLeggings(Item::get(ITEM::DIAMOND_LEGGINGS));
+       $player->getInventory()->setBoots(Item::get(ITEM::DIAMOND_BOOTS));
+       }
+             //Iron Armour
+      if($item->getid() == 265){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->removeItem(Item::get(ITEM::GOLD_INGOT));
+       $player->getInventory()->removeItem(Item::get(ITEM::GUNPOWDER));
+       $player->getInventory()->removeItem(Item::get(ITEM::LEATHER));
+       $player->getInventory()->addItem(Item::get(ITEM::BED));
+       $player->getInventory()->setHelmet(Item::get(ITEM::IRON_HELMET));
+       $player->getInventory()->setChestplate(Item::get(ITEM::IRON_CHESTPLATE));
+       $player->getInventory()->setLeggings(Item::get(ITEM::IRON_LEGGINGS));
+       $player->getInventory()->setBoots(Item::get(ITEM::IRON_BOOTS));
+       }
+             //Gold Armour
+      if($item->getid() == 266){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->removeItem(Item::get(ITEM::GOLD_INGOT));
+       $player->getInventory()->removeItem(Item::get(ITEM::GUNPOWDER));
+       $player->getInventory()->removeItem(Item::get(ITEM::LEATHER));
+       $player->getInventory()->addItem(Item::get(ITEM::BED));
+       $player->getInventory()->setHelmet(Item::get(ITEM::GOLD_HELMET));
+       $player->getInventory()->setChestplate(Item::get(ITEM::GOLD_CHESTPLATE));
+       $player->getInventory()->setLeggings(Item::get(ITEM::GOLD_LEGGINGS));
+       $player->getInventory()->setBoots(Item::get(ITEM::GOLD_BOOTS));
+       }
+    //Chain Armour
+      if($item->getid() == 289){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->removeItem(Item::get(ITEM::GOLD_INGOT));
+       $player->getInventory()->removeItem(Item::get(ITEM::GUNPOWDER));
+       $player->getInventory()->removeItem(Item::get(ITEM::LEATHER));
+       $player->getInventory()->addItem(Item::get(ITEM::BED));
+       $player->getInventory()->setHelmet(Item::get(ITEM::CHAIN_HELMET));
+       $player->getInventory()->setChestplate(Item::get(ITEM::CHAIN_CHESTPLATE));
+       $player->getInventory()->setLeggings(Item::get(ITEM::CHAIN_LEGGINGS));
+       $player->getInventory()->setBoots(Item::get(ITEM::CHAIN_BOOTS));
+       }
+       //Leather Armour
+      if($item->getid() == 334){
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND));
+      $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_INGOT));
+      $player->getInventory()->removeItem(Item::get(ITEM::GOLD_INGOT));
+       $player->getInventory()->removeItem(Item::get(ITEM::GUNPOWDER));
+       $player->getInventory()->removeItem(Item::get(ITEM::LEATHER));
+       $player->getInventory()->addItem(Item::get(ITEM::BED));
+       $player->getInventory()->setHelmet(Item::get(ITEM::LEATHER_CAP));
+       $player->getInventory()->setChestplate(Item::get(ITEM::LEATHER_TUNIC));
+       $player->getInventory()->setLeggings(Item::get(ITEM::LEATHER_PANTS));
+       $player->getInventory()->setBoots(Item::get(ITEM::LEATHER_BOOTS));
+       }     
 //Gadgets
    if($item->getid() == 328){
        $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
       $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE_DUST));
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
       $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
       $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
       $player->getInventory()->addItem(Item::get(ITEM::IRON_AXE));     
@@ -124,23 +207,30 @@ if($item->getId() == 346){
        $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
       $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE_DUST));
-      $player->getInventory()->addItem(Item::get(ITEM::LAPIS));
-      $player->getInventory()->addItem(Item::get(ITEM::ORANGEDYE));
-      $player->getInventory()->addItem(Item::get(ITEM::ROSERED));
-      $player->getInventory()->addItem(Item::get(ITEM::BONEMEAL));
+      $player->getInventory()->removeItem(Item::get(ITEM::DIAMOND_HELMET));
       $player->getInventory()->addItem(Item::get(ITEM::BED));
+      $player->getInventory()->addItem(Item::get(ITEM::DYE,4,1));
+      $player->getInventory()->addItem(Item::get(ITEM::DYE,14,1));
+      $player->getInventory()->addItem(Item::get(ITEM::DYE,1,1));
+      $player->getInventory()->addItem(Item::get(ITEM::DYE,15,1));
 }
 //Back
    if($item->getId() == 355){
       $player->getInventory()->removeItem(Item::get(ITEM::BED));
+      $player->getInventory()->removeItem(Item::get(ITEM::SLIMEBALL));
+      $player->getInventory()->removeItem(Item::get(ITEM::IRON_AXE));
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
       $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE));
       $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
-      $player->getInventory()->removeItem(Item::get(ITEM::LAPIS_LAZULE));
-      $player->getInventory()->removeItem(Item::get(ITEM::ORANGEDYE));
-      $player->getInventory()->removeItem(Item::get(ITEM::ROSERED));
-      $player->getInventory()->removeItem(Item::get(ITEM::BONEMEAL));
+      $player->getInventory()->removeItem(Item::get(ITEM::DYE,15,1));
+      $player->getInventory()->removeItem(Item::get(ITEM::DYE,4,1));
+      $player->getInventory()->removeItem(Item::get(ITEM::DYE,1,1));
+      $player->getInventory()->removeItem(Item::get(ITEM::DYE,14,1));
       $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
+      $player->getInventory()->setHelmet(Item::get(ITEM::AIR));
+      $player->getInventory()->setChestplate(Item::get(ITEM::AIR));
+      $player->getInventory()->setLeggings(Item::get(ITEM::AIR));
+      $player->getInventory()->setBoots(Item::get(ITEM::AIR));
 }
 }
 }
@@ -151,7 +241,7 @@ if($item->getId() == 346){
      if($i->getId() == 347){
      $p->sendPopup("§l§dCosmetic§eMenu");
      }
-     //Gadgets
+     //6s
      if($i->getId() == 328){
      $p->sendPopup("§l§6Gadgets");
      }
@@ -169,6 +259,9 @@ if($item->getId() == 346){
      }
      if($i->getId() == 331){
      $p->sendPopup("§l§dParticle§eBomb");
+     }
+     if($i->getId() == 310){
+     $p->sendPopup("§l§6Armours");
      }
      if($i->getId() == 352){
      $p->sendPopup("§l§6LightingStick");
