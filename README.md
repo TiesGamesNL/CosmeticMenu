@@ -11,12 +11,12 @@ A plugin that let you use gadgets with a tap of a clock.
   - BunnnyHop [x]
   - Lightning stick [ ]
   - EnderPearl [ ]
-- [ ] Armour
-  - Diamond [ ]
-  - Iron [ ]
-  - Gold [ ]
-  - Chain [ ]
-  - Leather [ ]
+- [x] Armour
+  - Diamond [x]
+  - Iron [x]
+  - Gold [x]
+  - Chain [x]
+  - Leather [x]
 - [ ] Particles
   - Fire [ ]
   - Water [ ]
