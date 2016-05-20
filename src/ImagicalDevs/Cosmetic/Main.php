@@ -27,7 +27,12 @@ use pocketmine\block\Air;
 use pocketmine\network\protocol\AddItemEntityPacket;
 
 Class Main extends PluginBase implements Listener{
-       
+       //EnderPearl
+/**@var Item*/
+	private $item;
+	/**@var int*/
+	protected $damage = 0;
+	
      public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info("§aCosmeticMenu by ImagicalDevs loaded ;D!");
@@ -50,30 +55,80 @@ if($item->getId() == 341){
      $level->addParticle($particle3);
      $level->addParticle($particle4);
    } 
+   //Leaper
+            if( $block->getId() === 0){
+$player->sendTIP("§cPlease wait");
+return true;
+   }
+      
+       if($item->getId() == 258){
+      if($player->getDirection() == 0){
+        $player->knockBack($player, 0, 1, 0, 1);
+      }
+      elseif($player->getDirection() == 1){
+        $player->knockBack($player, 0, 0, 1, 1);
+      }
+      elseif($player->getDirection() == 2){
+        $player->knockBack($player, 0, -1, 0, 1);
+      }
+      elseif($player->getDirection() == 3){
+        $player->knockBack($player, 0, 0, -1, 1);
+        }
+      
+$player->sendTIP("§aused Leap!");
+   }
+//Egg Launcher
+if($item->getId() == 346){
+						$nbt = new Compound ( "", [ 
+				"Pos" => new Enum ( "Pos", [ 
+						new Double ( "", $player->x ),
+						new Double ( "", $player->y + $player->getEyeHeight () ),
+						new Double ( "", $player->z ) 
+				] ),
+				"Motion" => new Enum ( "Motion", [
+                                                new Double ( "", - \sin ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
+						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
+				] ),
+				"Rotation" => new Enum ( "Rotation", [ 
+						new Float ( "", $player->yaw ),
+						new Float ( "", $player->pitch ) 
+				] ) 
+		] );
+                                                
+                  
+		     $motion = 2 % 100;
+		$f = $motion;
+		$snowball = Entity::createEntity ( "Egg", $player->chunk, $nbt, $player );
+		$snowball->setMotion ( $snowball->getMotion ()->multiply ( $f ) );
+		$snowball->spawnToAll ();
+	}
 //Items
    if($item->getId() == 347){
       $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->addItem(Item::get(ITEM::MINECART));
-      $player->getInventory()->addItem(Item::get(ITEM::GLOWSTONE));
+      $player->getInventory()->addItem(Item::get(ITEM::GLOWSTONE_DUST));
 }
 //Gadgets
    if($item->getid() == 328){
        $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
-      $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE));
+      $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE_DUST));
       $player->getInventory()->addItem(Item::get(ITEM::FISHING_ROD));
-      $player->getInventory()->addItem(Item::get(ITEM::BED))     
+      $player->getInventory()->addItem(Item::get(ITEM::SLIMEBALL));
+      $player->getInventory()->addItem(Item::get(ITEM::IRON_AXE));     
+      $player->getInventory()->addItem(Item::get(ITEM::BED));     
 }
 //Partical
    if($item->getid() == 348){
        $player->getInventory()->removeItem(Item::get(ITEM::CLOCK));
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
-      $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE));
-      $player->getInventory()->addItem(Item::get(ITEM::LAPISLAZULE));
+      $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE_DUST));
+      $player->getInventory()->addItem(Item::get(ITEM::LAPIS));
       $player->getInventory()->addItem(Item::get(ITEM::ORANGEDYE));
       $player->getInventory()->addItem(Item::get(ITEM::ROSERED));
       $player->getInventory()->addItem(Item::get(ITEM::BONEMEAL));
-      $player->getInventory()->addItem(Item::get(ITEM::BED))
+      $player->getInventory()->addItem(Item::get(ITEM::BED));
 }
 //Back
    if($item->getId() == 355){
@@ -81,11 +136,13 @@ if($item->getId() == 341){
       $player->getInventory()->removeItem(Item::get(ITEM::MINECART));
       $player->getInventory()->removeItem(Item::get(ITEM::GLOWSTONE));
       $player->getInventory()->removeItem(Item::get(ITEM::FISHING_ROD));
-      $player->getInventory()->removeItem(Item::get(ITEM::LAPISLAZULE));
+      $player->getInventory()->removeItem(Item::get(ITEM::LAPIS_LAZULE));
       $player->getInventory()->removeItem(Item::get(ITEM::ORANGEDYE));
       $player->getInventory()->removeItem(Item::get(ITEM::ROSERED));
       $player->getInventory()->removeItem(Item::get(ITEM::BONEMEAL));
       $player->getInventory()->addItem(Item::get(ITEM::CLOCK));
+}
+}
 }
 	public function onPlayerItemHeldEvent(PlayerItemHeldEvent $e){
 		$i = $e->getItem();
@@ -105,10 +162,13 @@ if($item->getId() == 341){
      $p->sendPopup("§l§6EnderPearl");
      }
      if($i->getId() == 258){
-     $p->sendPopup("§l§BunnyHop");
+     $p->sendPopup("§l§bBunnyHop");
      }
      if($i->getId() == 288){
      $p->sendPopup("§l§6FlyTime");
+     }
+     if($i->getId() == 331){
+     $p->sendPopup("§l§dParticle§eBomb");
      }
      if($i->getId() == 352){
      $p->sendPopup("§l§6LightingStick");
@@ -117,57 +177,23 @@ if($item->getId() == 341){
      if($i->getId() == 348){
      $p->sendPopup("§l§bParticals");
      }
-     if($i->getId() == 351:4){
+     if($i->getId() == 351 && $i->getDamage() == 4){
      $p->sendPopup("§l§6Water");
      }
-     if($i->getId() == 351:14){
+     if($i->getId() == 351 && $i->getDamage() == 14){
      $p->sendPopup("§l§6Fire");
      }
-     if($i->getId() == 351:1){
+     if($i->getId() == 351 && $i->getDamage() == 1){
      $p->sendPopup("§l§6Hearts");
      }
-     if($i->getId() == 351:15){
+     if($i->getId() == 351 && $i->getDamage() == 15){
      $p->sendPopup("§l§6Smoke");
      }
      //Back
      if($i->getId() == 355){     
      $p->sendPopup("§l§7Back...");  
      } 
-//ItemUse
-//Gadgets
-//EggLauncher
-
-  if($item->getId() == 346){
-						$nbt = new Compound ( "", [ 
-				"Pos" => new Enum ( "Pos", [ 
-						new Double ( "", $player->x ),
-						new Double ( "", $player->y + $player->getEyeHeight () ),
-						new Double ( "", $player->z ) 
-				] ),
-				"Motion" => new Enum ( "Motion", [ 
-                                                new Double ( "", - \sin ( $player- >yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ),
-						new Double ( "", - \sin ( $player->pitch / 180 * M_PI ) ),
-						new Double ( "",\cos ( $player->yaw / 180 * M_PI ) *\cos ( $player->pitch / 180 * M_PI ) ) 
-				] ),
-				"Rotation" => new Enum ( "Rotation", [ 
-						new Float ( "", $player->yaw ),
-						new Float ( "", $player->pitch ) 
-				] ) 
-		] );
-                                                
-                  
-		     $motion = 2 % 100;
-		$f = $motion;
-		$snowball = Entity::createEntity ( "Egg", $player->chunk, $nbt, $player );
-		$snowball->setMotion ( $snowball->getMotion ()->multiply ( $f ) );
-		$snowball->spawnToAll ();
-	}
-//EnderPearl
-/**@var Item*/
-	private $item;
-	/**@var int*/
-	protected $damage = 0;
-
+   }
 	public function onUpdate($currentTick) {
         if ($this->closed) {
             return false;
@@ -229,5 +255,4 @@ if($item->getId() == 341){
 * LightingStick
 * Particals-Emerald is asigned on this
 */
-}
 }
