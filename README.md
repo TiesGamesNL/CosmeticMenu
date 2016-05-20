@@ -6,17 +6,17 @@ A plugin that let you use gadgets with a tap of a clock.
 ## ToDo List
 
 - [x] Gadgets
-  - Egg Launcher [x]
-  - ParticleBomb [x]
-  - BunnnyHop [x]
+  - [x] Egg Launcher 
+  - [x] ParticleBomb
+  - [x] BunnnyHop
   - Lightning stick [ ]
   - EnderPearl [ ]
 - [x] Armour
-  - Diamond [x]
-  - Iron [x]
-  - Gold [x]
-  - Chain [x]
-  - Leather [x]
+  - [x] Diamond
+  - [x] Iron
+  - [x] Gold
+  - [x] Chain
+  - [x] Leather 
 - [ ] Particles
   - Fire [ ]
   - Water [ ]
